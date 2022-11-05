@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 function Counter(props) {
-  console.log(props);
+  console.log(props, "at 3");
 
   return (
     <>
