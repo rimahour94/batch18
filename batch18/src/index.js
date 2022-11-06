@@ -5,8 +5,8 @@ const root = reactDom.createRoot(document.getElementById("root"));
 
 root.render(
   <>
-    <h1>Hello ReactJs</h1>
+    {/* <h1>Hello ReactJs</h1> */}
     <App />
-    <p>This is Paragraph</p>
+    {/* <p>This is Paragraph</p> */}
   </>
 );

@@ -1,6 +1,6 @@
 import "./App.css";
 import Counter from "./component/counter/Counter";
-
+import HooksUseState from "./component/hooks/HooksUseState";
 function App() {
   let college = "DU";
 
@@ -38,10 +38,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>App Js file {college}</h1>
+      {/* <h1>App Js file {college}</h1>
       <p>Hello app js Paragraph {college} </p>
-      <h3 style={styleobj}>{text}</h3>
-      <Counter college="DU" userDetails={details} arr={arr} />
+      <h3 style={styleobj}>{text}</h3> */}
+      {/* <Counter college="DU" userDetails={details} arr={arr} /> */}
+      <HooksUseState />
     </div>
   );
 }
