@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 function Counter(props) {
   console.log(props, "at 3");
-
+  console.log("at 4");
   return (
     <>
       <h2>Counter {props.college}</h2>
