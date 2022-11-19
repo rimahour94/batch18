@@ -1,5 +1,6 @@
 import "./App.css";
 import Counter from "./component/counter/Counter";
+import HooksUseEffect from "./component/hooks/HooksUseEffect";
 import HooksUseState from "./component/hooks/HooksUseState";
 function App() {
   let college = "DU";
@@ -42,7 +43,8 @@ function App() {
       <p>Hello app js Paragraph {college} </p>
       <h3 style={styleobj}>{text}</h3> */}
       {/* <Counter college="DU" userDetails={details} arr={arr} /> */}
-      <HooksUseState />
+      {/* <HooksUseState /> */}
+      <HooksUseEffect />
     </div>
   );
 }

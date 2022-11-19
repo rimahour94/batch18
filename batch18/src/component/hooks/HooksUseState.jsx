@@ -1,7 +1,12 @@
 import { useState } from "react";
 function HooksUseState() {
   const [count, setCount] = useState(0);
-
+  const [arr, setarray] = useState([
+    { name: "ABCD", id: "123", city: "Noida" },
+    { name: "BCDE", id: "234", city: "Delhi" },
+    { name: "CDEF", id: "345", city: "Pune" },
+    { name: "DEFG", id: "456", city: "Mumbai" },
+  ]);
   const decrement = () => {
     setCount((prev) => {
       console.log(prev);
@@ -29,6 +34,17 @@ function HooksUseState() {
       >
         Reset
       </button>
+
+      <ul>
+        {arr.map((user) => (
+          <div key={user.id}>
+            <li>
+              <span> {user.name}</span>
+              <span>{user.city}</span>
+            </li>
+          </div>
+        ))}
+      </ul>
     </>
   );
 }
