@@ -3,6 +3,8 @@ import Counter from "./component/counter/Counter";
 import HooksUseEffect from "./component/hooks/HooksUseEffect";
 import HooksUseReducer from "./component/hooks/HooksUseReducer";
 import HooksUseState from "./component/hooks/HooksUseState";
+import HooksUseCallback from "./component/hooks/usecallback/HooksUseCallback";
+import HooksUseContext from "./component/hooks/usecontext/HooksUseContext";
 function App() {
   let college = "DU";
 
@@ -46,7 +48,9 @@ function App() {
       {/* <Counter college="DU" userDetails={details} arr={arr} /> */}
       {/* <HooksUseState /> */}
       {/* <HooksUseEffect /> */}
-      <HooksUseReducer />
+      {/* <HooksUseReducer /> */}
+      {/* <HooksUseContext /> */}
+      <HooksUseCallback />
     </div>
   );
 }

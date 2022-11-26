@@ -10,6 +10,7 @@ import {
 import axios from "axios";
 import withStyles from "@mui/material";
 import { styled } from "@mui/system";
+import Title from "./usecallback/children/Title";
 function HooksUseEffect() {
   const [users, setUsers] = useState([]);
 
@@ -36,7 +37,7 @@ function HooksUseEffect() {
 
   return (
     <>
-      <h2>Hooks UseEffect</h2>
+      <Title title="Hooks UseEffect" />
       {users.length == 0 ? (
         <h2>Users data is not available</h2>
       ) : (
