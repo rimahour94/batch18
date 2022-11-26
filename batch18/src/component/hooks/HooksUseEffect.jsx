@@ -26,40 +26,57 @@ function HooksUseEffect() {
     fetchData();
   }, []);
 
+  const deleteHandler = (userId) => {
+    const filteredUsers = users.filter((user) => {
+      return user.id !== userId;
+    });
+
+    setUsers(filteredUsers);
+  };
+
   return (
     <>
       <h2>Hooks UseEffect</h2>
-
-      <Table>
-        <TableHead>
-          <TableRow style={{ backgroundColor: "black" }}>
-            <TableCell style={{ color: "white" }}>S/N</TableCell>
-            <TableCell style={{ color: "white" }}>Name</TableCell>
-            <TableCell style={{ color: "white" }}>UserName</TableCell>
-            <TableCell style={{ color: "white" }}>Email</TableCell>
-            <TableCell style={{ color: "white" }}>Company</TableCell>
-            <TableCell style={{ color: "white" }}>Address</TableCell>
-            <TableCell style={{ color: "white" }}>Button</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {users.map((user) => {
-            return (
-              <TableRow key={user.id}>
-                <TableCell>{user.id}</TableCell>
-                <TableCell>{user.name}</TableCell>
-                <TableCell>{user.username}</TableCell>
-                <TableCell>{user.email}</TableCell>
-                <TableCell>{user.company.name}</TableCell>
-                <TableCell>{user.address.city}</TableCell>
-                <Button variant="contained" color="secondary">
-                  Delete
-                </Button>
-              </TableRow>
-            );
-          })}
-        </TableBody>
-      </Table>
+      {users.length == 0 ? (
+        <h2>Users data is not available</h2>
+      ) : (
+        <Table>
+          <TableHead>
+            <TableRow style={{ backgroundColor: "black" }}>
+              <TableCell style={{ color: "white" }}>S/N</TableCell>
+              <TableCell style={{ color: "white" }}>Name</TableCell>
+              <TableCell style={{ color: "white" }}>UserName</TableCell>
+              <TableCell style={{ color: "white" }}>Email</TableCell>
+              <TableCell style={{ color: "white" }}>Company</TableCell>
+              <TableCell style={{ color: "white" }}>Address</TableCell>
+              <TableCell style={{ color: "white" }}>Button</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {users.map((user) => {
+              return (
+                <TableRow key={user.id}>
+                  <TableCell>{user.id}</TableCell>
+                  <TableCell>{user.name}</TableCell>
+                  <TableCell>{user.username}</TableCell>
+                  <TableCell>{user.email}</TableCell>
+                  <TableCell>{user.company.name}</TableCell>
+                  <TableCell>{user.address.city}</TableCell>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => {
+                      deleteHandler(user.id);
+                    }}
+                  >
+                    Delete
+                  </Button>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      )}
     </>
   );
 }
